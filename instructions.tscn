@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://60fnf57nbmda"]
+
+[sub_resource type="Theme" id="Theme_ontcq"]
+
+[node name="Instructions" type="Node2D"]
+
+[node name="Root" type="MarginContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 651.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Root"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_ontcq")
+theme_override_font_sizes/normal_font_size = 24
+text = "Fire your primary weapon (Right Trigger or Space) to punch through the shield.
+
+When your planetary cannon is charged, fire it (Left Trigger or Shift) to destroy the enemy turret. The cannon will use your position for targeting; be careful not to hit yourself.
+
+Avoid the seeker mine; it will follow you and destroy you on contact. It can't hurt you inside the ion zone (but your weapons won't work there, either).
+
+Avoid the blasts from the enemy turret. They can still hit you inside the ion zone.
+
+Push Back or F1 to Return to Game"
+horizontal_alignment = 1
+vertical_alignment = 1

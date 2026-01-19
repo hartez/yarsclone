@@ -1,0 +1,160 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpeaqwx7rfkqm"]
+
+[ext_resource type="Script" uid="uid://byoxap0k7xx5o" path="res://shield.gd" id="1_ffst0"]
+[ext_resource type="PackedScene" uid="uid://b3n5487610oi5" path="res://shield_chunk.tscn" id="1_vuocu"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ffst0")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+offset_right = 320.0
+offset_bottom = 651.0
+
+[node name="ShieldChunk2" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 240)
+
+[node name="ShieldChunk" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 208)
+
+[node name="ShieldChunk3" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 272)
+
+[node name="ShieldChunk4" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 304)
+
+[node name="ShieldChunk5" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 368)
+
+[node name="ShieldChunk6" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 336)
+
+[node name="ShieldChunk7" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 400)
+
+[node name="ShieldChunk8" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 432)
+
+[node name="ShieldChunk9" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(208, 240)
+
+[node name="ShieldChunk10" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(208, 208)
+
+[node name="ShieldChunk11" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(240, 240)
+
+[node name="ShieldChunk12" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(240, 208)
+
+[node name="ShieldChunk13" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(272, 240)
+
+[node name="ShieldChunk14" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(272, 208)
+
+[node name="ShieldChunk15" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(304, 240)
+
+[node name="ShieldChunk16" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(304, 208)
+
+[node name="ShieldChunk17" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(208, 432)
+
+[node name="ShieldChunk18" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(208, 400)
+
+[node name="ShieldChunk19" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(240, 432)
+
+[node name="ShieldChunk20" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(240, 400)
+
+[node name="ShieldChunk21" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(272, 432)
+
+[node name="ShieldChunk22" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(272, 400)
+
+[node name="ShieldChunk23" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(304, 432)
+
+[node name="ShieldChunk24" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(304, 400)
+
+[node name="ShieldChunk25" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 240)
+
+[node name="ShieldChunk26" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 208)
+
+[node name="ShieldChunk27" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 272)
+
+[node name="ShieldChunk28" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 304)
+
+[node name="ShieldChunk29" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 368)
+
+[node name="ShieldChunk30" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 336)
+
+[node name="ShieldChunk31" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 400)
+
+[node name="ShieldChunk32" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(144, 432)
+
+[node name="ShieldChunk33" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 176)
+
+[node name="ShieldChunk34" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(208, 176)
+
+[node name="ShieldChunk35" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(240, 176)
+
+[node name="ShieldChunk36" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(272, 176)
+
+[node name="ShieldChunk37" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(304, 176)
+
+[node name="ShieldChunk38" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(176, 464)
+
+[node name="ShieldChunk39" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(208, 464)
+
+[node name="ShieldChunk40" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(240, 464)
+
+[node name="ShieldChunk41" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(272, 464)
+
+[node name="ShieldChunk42" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(304, 464)
+
+[node name="ShieldChunk43" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(112, 240)
+
+[node name="ShieldChunk44" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(112, 272)
+
+[node name="ShieldChunk45" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(112, 304)
+
+[node name="ShieldChunk46" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(112, 368)
+
+[node name="ShieldChunk47" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(112, 336)
+
+[node name="ShieldChunk48" parent="." groups=["Chunks"] instance=ExtResource("1_vuocu")]
+position = Vector2(112, 400)
+
+[node name="RebuildTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="RebuildTimer" to="." method="_on_rebuild_timer_timeout"]

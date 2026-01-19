@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbpa6e1sqv7jm"]
+
+[ext_resource type="PackedScene" uid="uid://cmqjheajo83vx" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bwi7scgbo8555" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bk3yg533dhbg7" path="res://hud.tscn" id="2_272bh"]
+[ext_resource type="PackedScene" uid="uid://da4q6fd6bdgu6" path="res://seeker.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c3mcw4sxt6rqi" path="res://art/PixelBackgroundSeamless.png" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://d0k5wb7qxx4yr" path="res://neutralzone.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://hx6wderg6hhg" path="res://turret.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cpeaqwx7rfkqm" path="res://shield.tscn" id="7_272bh"]
+[ext_resource type="AudioStream" uid="uid://ug8nnn6mvlpn" path="res://sound/Ludum Dare 30 04.ogg" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://cualagourr1eo" path="res://Cannon.tscn" id="10_4c57u"]
+[ext_resource type="AudioStream" uid="uid://bkrhpvfo5xkct" path="res://sound/charge.ogg" id="11_efxa6"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_h2yge")
+
+[node name="HUD" parent="." instance=ExtResource("2_272bh")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1172.0
+offset_bottom = 651.0
+texture = ExtResource("4_lquwl")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(91, 314)
+
+[node name="SeekerStartPosition" type="Marker2D" parent="."]
+position = Vector2(917, 557)
+
+[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(62, 57)
+
+[node name="Seeker" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="NeutralZone" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(358, 324)
+script = null
+
+[node name="Turret" parent="." instance=ExtResource("7_5vw27")]
+position = Vector2(1105, 320)
+
+[node name="Shield" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(851, 0)
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kek77")
+volume_db = 2.68
+
+[node name="Cannon" parent="." instance=ExtResource("10_4c57u")]
+
+[node name="LevelWinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_efxa6")
+
+[connection signal="area_entered" from="Player" to="Seeker" method="_on_player_area_entered"]
+[connection signal="destroyed" from="Player" to="." method="_on_player_destroyed"]
+[connection signal="fire_cannon" from="Player" to="Cannon" method="_on_player_fire_cannon"]
+[connection signal="hit" from="Seeker" to="." method="_on_seeker_hit"]
+[connection signal="area_entered" from="NeutralZone" to="Player" method="_on_neutral_zone_area_entered"]
+[connection signal="area_entered" from="NeutralZone" to="Seeker" method="_on_neutral_zone_area_entered"]
+[connection signal="area_exited" from="NeutralZone" to="Player" method="_on_neutral_zone_area_exited"]
+[connection signal="area_exited" from="NeutralZone" to="Seeker" method="_on_neutral_zone_area_exited"]
+[connection signal="area_entered" from="Turret" to="Player" method="_on_turret_area_entered"]
+[connection signal="destroyed" from="Turret" to="." method="_on_turret_destroyed"]
+[connection signal="firing" from="Turret" to="." method="_on_turret_firing"]
+[connection signal="hit" from="Turret" to="." method="_on_turret_hit"]
+[connection signal="firing" from="Cannon" to="." method="_on_cannon_firing"]

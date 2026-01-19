@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3n5487610oi5"]
+
+[ext_resource type="Script" uid="uid://crqfrn1vvfpbf" path="res://shield_chunk.gd" id="1_5rhaf"]
+[ext_resource type="Texture2D" uid="uid://dwvvrksmfa55n" path="res://art/Platform_01_png_processed.png" id="1_c2kgf"]
+[ext_resource type="Texture2D" uid="uid://smyhfgyrnf8g" path="res://art/Explosion01_Frame_01_png_processed.png" id="3_7vgi2"]
+[ext_resource type="Texture2D" uid="uid://bbuuuqq5v41ah" path="res://art/Explosion01_Frame_02_png_processed.png" id="4_4pk8g"]
+[ext_resource type="Texture2D" uid="uid://csqhe1ahxwnx1" path="res://art/Explosion01_Frame_03_png_processed.png" id="5_mnc6o"]
+[ext_resource type="AudioStream" uid="uid://drsdd7ve68tq7" path="res://sound/Retro Explosion Short 01.wav" id="6_4pk8g"]
+[ext_resource type="AudioStream" uid="uid://bfsovw2ynjxic" path="res://sound/Retro Impact Metal 36.wav" id="7_mnc6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rhaf"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m7obk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7vgi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4pk8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mnc6o")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ShieldChunk" type="Area2D"]
+script = ExtResource("1_5rhaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5rhaf")
+
+[node name="BlockSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_c2kgf")
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_m7obk")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4pk8g")
+
+[node name="HitNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_mnc6o")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="Explosion" to="." method="_on_explosion_animation_finished"]

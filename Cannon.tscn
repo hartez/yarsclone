@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cualagourr1eo"]
+
+[ext_resource type="Texture2D" uid="uid://dp2ttvs14k6kj" path="res://art/GunTurret_Orange_png_processed.png" id="1_4ogkl"]
+[ext_resource type="Script" uid="uid://vqrlyyuyit21" path="res://cannon.gd" id="1_i175o"]
+[ext_resource type="AudioStream" uid="uid://dxtf5147q4i2m" path="res://sound/Retro PowerUP 09.wav" id="3_ria0b"]
+[ext_resource type="AudioStream" uid="uid://d1kkxrjlfwoqk" path="res://sound/Retro Missile Launcher 01.wav" id="4_pu81y"]
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_i175o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_4ogkl")
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="ChargedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ria0b")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pu81y")
+volume_db = 5.361
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

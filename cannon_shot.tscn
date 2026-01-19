@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjanhqa0ivgo4"]
+
+[ext_resource type="Texture2D" uid="uid://dymwmalfi5h8k" path="res://art/Plasma_Large_png_processed.png" id="1_13rdk"]
+[ext_resource type="Script" uid="uid://dfytm3sjnrode" path="res://cannon_shot.gd" id="1_igycs"]
+[ext_resource type="Texture2D" uid="uid://4hc5fay17x76" path="res://art/Laser_Large_png_processed.png" id="2_igycs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llfj0"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_13rdk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_igycs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytu7r"]
+radius = 11.0
+height = 34.0
+
+[node name="CannonShot" type="Area2D"]
+script = ExtResource("1_igycs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.27272, 9.92105)
+rotation = 1.5708
+scale = Vector2(2.43421, 1.32405)
+sprite_frames = SubResource("SpriteFrames_llfj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ytu7r")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

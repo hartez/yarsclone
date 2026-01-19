@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://da4q6fd6bdgu6"]
+
+[ext_resource type="Script" uid="uid://buffoocjoyfms" path="res://seeker.gd" id="1_ehwld"]
+[ext_resource type="Texture2D" uid="uid://8meir1okj2rr" path="res://art/Rotor_png_processed.png" id="2_ehwld"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehwld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ehwld")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euw15"]
+size = Vector2(25, 27)
+
+[node name="Seeker" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_ehwld")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -1.5)
+scale = Vector2(0.676923, 0.671875)
+sprite_frames = SubResource("SpriteFrames_ehwld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -1.5)
+shape = SubResource("RectangleShape2D_euw15")
+debug_color = Color(0.840961, 0.285436, 0.648487, 0.42)

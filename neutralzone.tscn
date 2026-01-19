@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0k5wb7qxx4yr"]
+
+[ext_resource type="Script" uid="uid://cq0068xr1q2ru" path="res://neutralzone.gd" id="1_13coa"]
+[ext_resource type="Shader" uid="uid://cup5uvkkrq2ie" path="res://shaders/mirage.gdshader" id="2_3d2ki"]
+[ext_resource type="Texture2D" uid="uid://d23nkhi3y2bab" path="res://art/white.png" id="3_y53r6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhjgx"]
+size = Vector2(238, 651)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edl6d"]
+shader = ExtResource("2_3d2ki")
+shader_parameter/frequency = 60.0
+shader_parameter/depth = 0.002
+
+[node name="NeutralZone" type="Area2D"]
+script = ExtResource("1_13coa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jhjgx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -114.0
+offset_top = -325.0
+offset_right = 116.0
+offset_bottom = 326.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.792157, 0.92549, 0.184314, 0.25098)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_edl6d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -327.0
+offset_right = 121.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y53r6")

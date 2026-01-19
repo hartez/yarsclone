@@ -1,0 +1,144 @@
+[gd_scene load_steps=27 format=3 uid="uid://hx6wderg6hhg"]
+
+[ext_resource type="Texture2D" uid="uid://dcljkn8ub8wo8" path="res://art/GunTurretMount_png_processed.png" id="1_3oylf"]
+[ext_resource type="Script" uid="uid://4h4cc7m2sok3" path="res://turret.gd" id="1_tjdg3"]
+[ext_resource type="Texture2D" uid="uid://3p2tlkihv4x8" path="res://art/Explosion02_Frame_01_png_processed.png" id="3_glt8u"]
+[ext_resource type="Texture2D" uid="uid://ck3lphq5t1yfk" path="res://art/Explosion02_Frame_02_png_processed.png" id="4_22ar4"]
+[ext_resource type="Texture2D" uid="uid://e81wt557bp1" path="res://art/Explosion02_Frame_03_png_processed.png" id="5_18rqd"]
+[ext_resource type="Texture2D" uid="uid://dsyfkca86hnaa" path="res://art/Explosion02_Frame_04_png_processed.png" id="6_8ebrj"]
+[ext_resource type="Texture2D" uid="uid://d253a8ta2nu7v" path="res://art/Explosion02_Frame_05_png_processed.png" id="7_3ng8e"]
+[ext_resource type="Texture2D" uid="uid://o8uhgibtea7g" path="res://art/Explosion02_Frame_06_png_processed.png" id="8_icjwo"]
+[ext_resource type="Texture2D" uid="uid://76kcqnm5kbtr" path="res://art/Explosion02_Frame_07_png_processed.png" id="9_qmhlq"]
+[ext_resource type="Texture2D" uid="uid://bmyxyq4ukgy37" path="res://art/Explosion02_Frame_08_png_processed.png" id="10_1v1ej"]
+[ext_resource type="Texture2D" uid="uid://c6pqwpml6lc5p" path="res://art/Explosion02_Frame_09_png_processed.png" id="11_tfp1m"]
+[ext_resource type="AudioStream" uid="uid://dl6175uyegrfc" path="res://sound/Retro PowerUP 23.wav" id="12_18rqd"]
+[ext_resource type="AudioStream" uid="uid://bv2eyufsb0fa6" path="res://sound/Retro Weapon Electric 18.wav" id="13_8ebrj"]
+[ext_resource type="Texture2D" uid="uid://smyhfgyrnf8g" path="res://art/Explosion01_Frame_01_png_processed.png" id="14_c757h"]
+[ext_resource type="Texture2D" uid="uid://bbuuuqq5v41ah" path="res://art/Explosion01_Frame_02_png_processed.png" id="15_axpr2"]
+[ext_resource type="Texture2D" uid="uid://csqhe1ahxwnx1" path="res://art/Explosion01_Frame_03_png_processed.png" id="16_16tps"]
+[ext_resource type="Texture2D" uid="uid://cdamkc2rvajpf" path="res://art/Explosion01_Frame_04_png_processed.png" id="17_flimi"]
+[ext_resource type="Texture2D" uid="uid://ijsmsql6xw5f" path="res://art/Explosion01_Frame_05_png_processed.png" id="18_nvj3q"]
+[ext_resource type="Texture2D" uid="uid://dlii8tj4tqq86" path="res://art/Explosion01_Frame_06_png_processed.png" id="19_3rpnf"]
+[ext_resource type="Texture2D" uid="uid://bth7d3pa538rx" path="res://art/Explosion01_Frame_07_png_processed.png" id="20_o88lt"]
+[ext_resource type="Texture2D" uid="uid://bvwc6u0kpn4vh" path="res://art/Explosion01_Frame_08_png_processed.png" id="21_at6qt"]
+[ext_resource type="Texture2D" uid="uid://c5lf0dray6x3" path="res://art/Explosion01_Frame_09_png_processed.png" id="22_656gb"]
+[ext_resource type="AudioStream" uid="uid://tglmevhqudcj" path="res://sound/Retro Explosion Swoshes 04.wav" id="23_axpr2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gkfbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3oylf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_c757h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_axpr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_16tps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_flimi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nvj3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3rpnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_o88lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_at6qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_656gb")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glt8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_glt8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_22ar4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_18rqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8ebrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3ng8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_icjwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qmhlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1v1ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tfp1m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjdg3"]
+radius = 32.28
+
+[node name="Turret" type="Area2D"]
+script = ExtResource("1_tjdg3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gkfbm")
+
+[node name="ChargeUp" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_glt8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tjdg3")
+
+[node name="FireCooldown" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="ChargeUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_18rqd")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_8ebrj")
+volume_db = -6.969
+
+[node name="FireCountdown" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_axpr2")
+volume_db = 2.68
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="FireCooldown" to="." method="_on_fire_cooldown_timeout"]
+[connection signal="timeout" from="FireCountdown" to="." method="_on_fire_countdown_timeout"]

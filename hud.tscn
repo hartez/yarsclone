@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk3yg533dhbg7"]
+
+[ext_resource type="Script" uid="uid://c060p0pd6fubi" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="PackedScene" uid="uid://60fnf57nbmda" path="res://instructions.tscn" id="2_1xsix"]
+[ext_resource type="Theme" uid="uid://dn7fimd62sklt" path="res://default.tres" id="3_8sq4i"]
+[ext_resource type="AudioStream" uid="uid://caoy0t7utpyl8" path="res://sound/Retro Blop 07.wav" id="3_640wx"]
+[ext_resource type="AudioStream" uid="uid://punuasoadoiu" path="res://sound/Retro Descending Long 04.wav" id="4_640wx"]
+[ext_resource type="AudioStream" uid="uid://c2o5vjab0s72w" path="res://sound/victory.ogg" id="5_a2258"]
+
+[sub_resource type="Theme" id="Theme_a2258"]
+
+[node name="Node2D" type="CanvasLayer"]
+script = ExtResource("1_64ctp")
+
+[node name="Root" type="MarginContainer" parent="."]
+offset_right = 1158.0
+offset_bottom = 654.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Instructions" parent="Root" instance=ExtResource("2_1xsix")]
+visible = false
+
+[node name="LevelIntro" type="GridContainer" parent="Root"]
+visible = false
+layout_mode = 2
+
+[node name="Level" type="Label" parent="Root/LevelIntro"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme = ExtResource("3_8sq4i")
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="Countdown" type="Label" parent="Root/LevelIntro"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource("3_8sq4i")
+text = "1"
+horizontal_alignment = 1
+
+[node name="StartInstructions" type="Label" parent="Root"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_8sq4i")
+text = "Press Start or Enter for New Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HelpInstructions" type="Label" parent="Root"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_a2258")
+theme_override_font_sizes/font_size = 24
+text = "Press Back or F1 for Instructions"
+horizontal_alignment = 1
+
+[node name="CannonCharge" type="HFlowContainer" parent="Root"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 10
+alignment = 1
+
+[node name="ChargeLabel" type="Label" parent="Root/CannonCharge"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_8sq4i")
+theme_override_font_sizes/font_size = 12
+text = "Cannon Charge"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Root/CannonCharge"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_8sq4i")
+theme_override_font_sizes/font_size = 12
+
+[node name="Level" type="Label" parent="Root"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Level X"
+
+[node name="CountdownTick" type="AudioStreamPlayer2D" parent="Root"]
+stream = ExtResource("3_640wx")
+
+[node name="LoseSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_640wx")
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_a2258")
